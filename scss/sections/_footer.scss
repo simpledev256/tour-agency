@@ -1,0 +1,69 @@
+@use '../custom' as *;
+@use '../components/typography' as *;
+
+.footer {
+    background-color: $footer;
+    color: $white;
+    font-family: $jost;
+    text-align: center;
+
+    .footer-logo {
+        margin-top: 3rem;
+    }
+
+    .footer-menu {
+        display: flex;
+        padding: 2% 6%;
+
+        .nav-links-standard {
+            flex: 1;
+            text-align: center;
+
+            ul li {
+                padding: 1rem;
+                position: relative;
+                display: inline-block;
+                list-style: none;
+
+                a {
+                    color: $gray-500;
+                    font-size: small;
+                }
+            }
+        }
+    }
+    
+    .footer-map {
+        overflow: hidden;
+
+        iframe {
+            border:0; 
+            position: relative; 
+            top:-50px;
+        }
+    }
+
+    .footer-text {
+        text-align: start;
+
+        @include media-breakpoint-down(lg) {
+            text-align: center;
+        }
+
+        h3 {
+            color: $yellow;
+            font-size: 1.5rem;
+        }
+
+        a {
+            color: $white;
+            text-decoration: none;
+            font-size: 0.8rem;
+        }
+
+        p {
+            color: $white;
+            font-size: 0.8rem;
+        }
+    }
+}

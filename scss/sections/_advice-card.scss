@@ -1,0 +1,187 @@
+@use '../custom' as *;
+@use '../components/typography' as *;
+@use '../components/animations' as *;
+
+.advice-card {
+    padding: 2rem;
+
+    .card-1 {
+        width: 60%;
+        height: 25rem;
+        font-family: $jost;
+        padding: 0;
+
+        .custom-carousel-2 {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+
+            img {
+                height: 25rem;
+                object-fit: cover;
+            }
+            .carousel-indicators button {
+                border-radius: 50%;
+                width: 0.5rem;
+                height: 0.5rem;
+            }
+        }
+        .card-content {
+            padding: 1rem;
+
+            .yellow-tag {
+                text-transform: uppercase;
+                background-color: $yellow;
+                padding: 0.2rem;
+                font-weight: 600;
+            }
+
+            h1 {
+                font-size: 2.3rem;
+                text-transform: capitalize;
+                color: $gray-600;
+            }
+            
+            .p-content {
+                margin-right: 4rem;
+            }
+        }
+    }
+
+    .card-2 {
+        width: 60%;
+        font-family: $jost;
+        margin-top: 2rem;
+        position: relative;
+
+        .side-1 {
+            padding: 0;
+            object-fit: cover;
+            background-image: url("../../img/side-1.jpg");
+            background-size: cover;
+            height: 25rem;
+        }
+        .side-2 {
+            padding: 0;
+            object-fit: cover;
+            background-image: url("../../img/side-2.jpg");
+            background-size: cover;
+            height: 25rem;
+        }
+
+        img {
+            height: 4rem;
+            width: 4rem;
+        }
+
+        .circle-text {
+            position: absolute;
+            width: 8rem;
+            height: 8rem;
+            color: $black;
+            text-transform: uppercase;
+            font-weight: 600;
+            background-color: $yellow;
+            border-radius: 50%;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding-top: 2.5rem;
+        }
+
+        .one-one {
+            position: absolute;
+            margin-top: -5%;
+            margin-left: -15%;
+            animation: animationOO 1s linear;
+            @include media-breakpoint-down(xl) {
+                display: none;
+            }
+        }
+        .one-two {
+            position: absolute;
+            margin-top: 25%;
+            margin-left: -25%;
+            @include media-breakpoint-down(xl) {
+                display: none;
+            }
+        }
+        .one-three {
+            position: absolute;
+            margin-top: 50%;
+            margin-left: -15%;
+            @include media-breakpoint-down(xl) {
+                display: none;
+            }
+        }
+
+        .two-one {
+            position: absolute;
+            margin-top: -5%;
+            margin-left: 55%;
+            @include media-breakpoint-down(xl) {
+                display: none;
+            }
+        }
+        .two-two {
+            position: absolute;
+            margin-top: 25%;
+            margin-left: 75%;
+            @include media-breakpoint-down(xl) {
+                display: none;
+            }
+        }
+        .two-three {
+            position: absolute;
+            margin-top: 50%;
+            margin-left: 55%;
+            @include media-breakpoint-down(xl) {
+                display: none;
+            }
+        }
+
+        @supports (animation-timeline: works) {
+            .one-one {
+                animation: 1s linear animationOO;
+                animation-timeline: flip-timeline;
+            }
+            .one-two {
+                animation: 1s linear animationOT;
+                animation-timeline: flip-timeline;
+            }
+            .one-three {
+                animation: 1s linear animationOTH;
+                animation-timeline: flip-timeline;
+            }
+
+            .two-one {
+                animation: 1s linear animationTO;
+                animation-timeline: flip-timeline;
+            }
+            .two-two {
+                animation: 1s linear animationTT;
+                animation-timeline: flip-timeline;
+            }
+            .two-three {
+                animation: 1s linear animationTTH;
+                animation-timeline: flip-timeline;
+            }
+
+            @scroll-timeline flip-timeline {
+                time-range: 1s;
+            }
+        }
+    }
+
+    @include media-breakpoint-down(xl) {
+        .card-1 {
+            height: fit-content;
+            width: auto;
+        }
+        .card-2 {
+            width: 100%;
+        }
+    }
+}

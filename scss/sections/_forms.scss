@@ -1,0 +1,85 @@
+@use '../custom' as *;
+@use '../components/typography' as *;
+
+.forms {
+    padding: 2rem;
+    width: 100%;
+    font-family: $jost;
+
+    .forms-title {
+        margin: auto;
+        width: 60%;
+        color: $gray-500;
+
+        h1 {
+            font-size: 2rem;
+        }
+    }
+
+    .forms-name {
+        margin: auto;
+        width: 60%;
+        padding: 0.5rem;
+        padding-left: 0;
+
+        .upper-text {
+            margin: 0.1rem;
+        }
+        
+        input {
+            width: 99%;
+            padding: 0.4rem;
+            color: $gray-600;
+            background-color: $gray-200;
+            border: none;
+
+            ::placeholder {
+                color: $gray-600;
+            }
+        }
+    }
+    
+    .forms-phone {
+        margin: auto;
+        width: 60%;
+        padding: 0.5rem;
+        padding-left: 0;
+
+        .upper-text {
+            margin: 0.1rem;
+        }
+        
+        input {
+            width: 99%;
+            padding: 0.4rem;
+            color: $gray-600;
+            background-color: $gray-200;
+            border: none;
+
+            ::placeholder {
+                color: $gray-600;
+            }
+        }
+
+        ::-webkit-outer-spin-button,
+        ::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    }
+
+    .forms-button {
+        margin: auto;
+        margin-top: 1rem;
+        width: 60%;
+
+        button {
+            width: 11rem;
+            color: $black;
+            text-transform: uppercase;
+            background-color: $yellow;
+            border: none;
+            padding: 0.7rem;
+        }
+    }
+}

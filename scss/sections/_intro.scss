@@ -1,0 +1,78 @@
+@use '../custom' as *;
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.menu {
+    font-size: 2rem;  
+    text-align: center;  
+    position:absolute;
+    top: 1.5rem;
+    z-index:10;
+    background: none;
+    width:100%;
+
+    button {
+        margin-right: 2rem;
+        height: 4rem; 
+        width: 4rem;  
+
+        span {
+            height: 2.5rem; 
+            width: 2.5rem; 
+        }
+    }
+    li {
+        padding: 0 0.7rem;
+        transform: translateY(20%);
+
+        a {
+            text-transform: uppercase;
+            font-weight: 400;
+            color: $white;
+
+            &:hover {
+                color: $yellow;
+            }
+        }
+    }
+}
+
+.logo {
+    max-height: 4rem;
+    max-width: 4rem;
+    margin-right: 4rem;
+}
+
+.logo-small {
+    height: 6rem;
+    width: 6rem;
+    margin-left: 2rem;
+}
+
+.custom-carousel-1 {
+    width: 100%;
+
+    img {
+        height: 100vh;
+        object-fit: cover;
+    }
+    .carousel-indicators button {
+        border-radius: 50%;
+        width: 1rem;
+        height: 1rem;
+    }
+}
+
+@include media-breakpoint-up(lg) { 
+    .menu {
+        font-size: 1rem;  
+        text-align: unset;  
+    }
+    .logo-small {
+        height: 4rem;
+        width: 4rem;
+    }
+}

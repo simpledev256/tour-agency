@@ -1,0 +1,39 @@
+@use '../custom' as *;
+@use '../components/typography' as *;
+
+.beach {
+    width: 100%;
+    height: 40rem;
+    object-fit: cover;
+    background-image: url("../../img/beach.jpg");
+    background-size: cover;
+    color: $white;
+    font-family: $jost;
+    display: flex;
+
+    .beach-content {
+        width: 60%;
+        margin: auto;
+        display: flex;
+
+        .custom-beach-1 {
+            margin: auto;
+            padding-left: 2rem;
+    
+            h1 {
+                justify-content: start;
+                font-size: 3rem;
+                text-transform: uppercase;
+                text-shadow: 1px 1px 0.5px $black;
+            }
+        }
+    
+        .custom-beach-2 {
+            margin: auto;
+
+            p {
+                font-size: 0.9rem;
+            }
+        }
+    }
+}
